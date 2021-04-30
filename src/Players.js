@@ -7,12 +7,12 @@ function Players(props) {
 const [players, setPlayers] = useState([]);
 
 const searchOptions = {
-  key: process.env.NHL_KEY
+  key: process.env.REACT_APP_NHL_KEY
 }
 
 
 useEffect(() => {
-    fetch('https://www.thesportsdb.com/api/v1/json/40130162/searchplayers.php?t=Chicago%20Blackhawks')
+    fetch(`https://www.thesportsdb.com/api/v1/json/${searchOptions.key}/searchplayers.php?t=Chicago%20Blackhawks`)
     .then((res) => res.json())
     .then((res) => {
 setPlayers(res.player)
