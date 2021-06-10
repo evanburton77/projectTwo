@@ -55,16 +55,23 @@ header a {
   align-items: center;
   display: flex;
   justify-content: center;
+  width: 300px;
   
 }
 
+.image{
+  
+  height: 400px;
+}
+
 .card-title {
-  background-color: #276074;
+  background-color: #00a0da;
   color: white;
   border-radius: 0 0 1rem 1rem;
   margin: 0;
   padding: 1rem;
   text-align: center;
+  
 }
 
 .card-title h3 {
@@ -80,7 +87,7 @@ header a {
 
 .details-image {
   padding: 1rem;
-  width: 200px;
+  width: 500px;
 }
 
 .details {
@@ -118,5 +125,5 @@ header a {
 }
 
 img{
-  width: 200px;
+  
 }

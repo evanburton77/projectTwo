@@ -3,37 +3,36 @@ import { Link } from 'react-router-dom'
 
 
 
-function Players(props) {
-const [players, setPlayers] = useState([]);
+function Drinks(props) {
+const [drinks, setDrinks] = useState([]);
 
-const searchOptions = {
-  key: process.env.REACT_APP_NHL_KEY
-}
+
 
 
 useEffect(() => {
-    fetch(`https://www.thesportsdb.com/api/v1/json/${searchOptions.key}/searchplayers.php?t=Chicago%20Blackhawks`)
+    fetch(`https://arcane-sands-30081.herokuapp.com/drinks/`)
     .then((res) => res.json())
     .then((res) => {
-setPlayers(res.player)
+setDrinks(res)
     })
     .catch(console.error)
 }, [])
 
     return (
         <section className="container">
-            {players.map(player => {
+            {drinks.map(drink => {
                 return(
-                    <Link to={`/details/${player.idPlayer}`} key={player.idPlayer}>  
+                    <Link to={`/details/${drink.id}`} key={drink.idDrink}>  
 <div class="card">
           <div className="card-image">
             <img
-              src={player.strThumb}
-              alt={player.strPlayer}
+              src={drink.image_url}
+              alt={drink.name}
+              class="image"
             />
           </div>
           <div className="card-title">
-            <h3>{player.strPlayer}</h3>
+            <h3>{drink.name}</h3>
           </div>
         </div>
         </Link>
@@ -45,4 +44,4 @@ setPlayers(res.player)
     );
 }
 
-export default Players;
+export default Drinks;

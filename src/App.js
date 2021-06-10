@@ -1,19 +1,19 @@
 import React from 'react';
-import Players from './Players.js'
+import Drinks from './Drinks.js'
 import { Route } from 'react-router-dom'
-import PlayerDetails from './PlayerDetails.js'
+import DrinkDetails from './DrinkDetails.js'
 
 function App() {
   return (
     <>
       <header>
         <h1>
-          <a href="/">Chicago Blackhawks</a>
+          <a href="/">Energy Drinks</a>
         </h1>
       </header>
       <main>
-        <Route path ="/" exact component = {Players}/>
-      <Route path ="/details/:id" component={PlayerDetails}/>
+        <Route path ="/" exact component = {Drinks}/>
+      <Route path ="/details/:id" component={DrinkDetails}/>
       </main>
     </>
   );
